@@ -143,16 +143,14 @@ class VoiceMessageView extends StatelessWidget {
               ),
 
               /// slider & noises
-              Expanded(
-                child: Row(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 8),
+                  
                     _noises(newTHeme),
-                    const SizedBox(height: 4),
+                   
                     Text(controller.remindingTime, style: counterTextStyle),
                   ],
-                ),
               ),
             ],
           );
