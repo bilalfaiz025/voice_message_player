@@ -5,15 +5,9 @@ import 'package:voice_message_package/src/voice_controller.dart';
 import 'package:voice_message_package/src/widgets/noises.dart';
 import 'package:voice_message_package/src/widgets/play_pause_button.dart';
 
-/// A widget that displays a voice message view with play/pause functionality.
-///
-/// The [VoiceMessageView] widget is used to display a voice message with customizable appearance and behavior.
-/// It provides a play/pause button, a progress slider, and a counter for the remaining time.
-/// The appearance of the widget can be customized using various properties such as background color, slider color, and text styles.
-///
-class VoiceMessageView extends StatelessWidget {
-  const VoiceMessageView(
-      {Key? key,
+class VoiceMessageViewWidget extends StatelessWidget {
+  const VoiceMessageViewWidget(
+      {super.key,
       required this.controller,
       this.backgroundColor = Colors.white,
       this.activeSliderColor = Colors.red,
@@ -49,8 +43,7 @@ class VoiceMessageView extends StatelessWidget {
         fontSize: 11,
         fontWeight: FontWeight.w500,
       ),
-      this.playPauseButtonLoadingColor = Colors.white})
-      : super(key: key);
+      this.playPauseButtonLoadingColor = Colors.white});
 
   /// The controller for the voice message view.
   final VoiceController controller;
@@ -128,6 +121,8 @@ class VoiceMessageView extends StatelessWidget {
         builder: (context, value, child) {
           return Row(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               /// play pause button
               PlayPauseButton(
@@ -142,16 +137,45 @@ class VoiceMessageView extends StatelessWidget {
                 buttonDecoration: playPauseButtonDecoration,
               ),
 
+              ///
+              const SizedBox(width: 10),
+
               /// slider & noises
-                Row(
+              Expanded(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                  
+                    const SizedBox(height: 8),
                     _noises(newTHeme),
-                   
-                    Text(controller.remindingTime, style: counterTextStyle),
+                    const SizedBox(height: 4),
                   ],
+                ),
               ),
+
+              ///
+              const SizedBox(width: 10),
+
+              /// speed button
+
+              Row(
+                children: [
+                  Container(
+                    height: 4,
+                    width: 4,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 4,
+                  ),
+                  Text(controller.remindingTime, style: counterTextStyle),
+                ],
+              ),
+
+              ///
+              const SizedBox(width: 10),
             ],
           );
         },
