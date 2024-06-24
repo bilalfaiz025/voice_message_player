@@ -143,7 +143,7 @@ class VoiceMessageView extends StatelessWidget {
               ),
 
               ///
-              const SizedBox(width: 10),
+             
 
               /// slider & noises
               Expanded(
@@ -160,8 +160,6 @@ class VoiceMessageView extends StatelessWidget {
 
               ///
               const SizedBox(width: 12),
-
-             
               ///
               const SizedBox(width: 10),
             ],
