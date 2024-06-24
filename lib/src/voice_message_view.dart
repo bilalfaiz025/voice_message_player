@@ -147,7 +147,7 @@ class VoiceMessageView extends StatelessWidget {
 
               /// slider & noises
               Expanded(
-                child: Column(
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 8),
@@ -161,9 +161,7 @@ class VoiceMessageView extends StatelessWidget {
               ///
               const SizedBox(width: 12),
 
-              /// speed button
-              _changeSpeedButton(color),
-
+             
               ///
               const SizedBox(width: 10),
             ],
