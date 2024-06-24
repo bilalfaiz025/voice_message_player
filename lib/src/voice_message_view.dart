@@ -142,9 +142,6 @@ class VoiceMessageView extends StatelessWidget {
                 buttonDecoration: playPauseButtonDecoration,
               ),
 
-              ///
-             
-
               /// slider & noises
               Expanded(
                 child: Row(
@@ -157,11 +154,6 @@ class VoiceMessageView extends StatelessWidget {
                   ],
                 ),
               ),
-
-              ///
-              const SizedBox(width: 12),
-              ///
-              const SizedBox(width: 10),
             ],
           );
         },
