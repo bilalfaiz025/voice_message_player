@@ -214,7 +214,7 @@ class VoiceMessageViewWidget extends StatelessWidget {
               },
             ),
             Opacity(
-              opacity: 0,
+              opacity: 1,
               child: Container(
                 width: controller.noiseWidth,
                 color: Colors.transparent.withOpacity(1),
